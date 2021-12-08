@@ -21,14 +21,12 @@ int main(int argc, char *argv[])
         return 1; 
     }
   
-  
     // part 1 solved around midnight, part 2 the next morning before cs recitation
     // warning; very ugly code...
     
     vector<string> ten;
     vector<string> four;
-    vector<int> answers;
-    
+
     int counter = 0;
     int sum = 0;
     
@@ -125,7 +123,6 @@ int main(int argc, char *argv[])
                 }
             }
         }
-        
         
         int number = 0;
         
