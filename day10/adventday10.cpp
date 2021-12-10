@@ -20,9 +20,10 @@ int main()
     }
     
     // had to teach myself deque for this shit... 2am vibes
+    // mostly use deque for one useful feature: push_front()
     deque<char> open;
     
-    // crude key, would definitely use ro, co, so, ao instead of wasting time with underscores.. dummy
+    // crude key, would also definitely use ro, co, so, ao instead of wasting time with underscores.. dummy
     // i imagine you could use maps somehow, but i don't know much about it yet and i am quite tired
     char r_o = '(';
     char c_o = '{';
@@ -33,8 +34,8 @@ int main()
     char s_c = ']';
     char a_c = '>';
     
-    vector<char> errors;
-    vector<long> results;
+    vector<char> errors; // for part 1
+    vector<long> results; // for part 2
     
     for (int i = 0; i < lines.size(); i++) {
         
@@ -84,7 +85,8 @@ int main()
             }
         }
         
-        // well, since we already have a deque of opening brackets, return the straddlers that don't have a match after running through the entire line
+        // well, since we already have a deque of opening brackets from part 1...
+        // return the straddlers that don't have a match after running through the entire line
       
         cout << "RUN: " << i+1 << endl;
         while (!open.empty() and valid) { // must be a valid line that ends abruptly
