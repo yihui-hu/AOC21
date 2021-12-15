@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         return 1; 
     }
   
-    // only part 1; still using good ol' vectors. 
+    // only part 1; still using good ol' vectors...
     
     string temp;
     vector<char> left;
@@ -56,28 +56,32 @@ int main(int argc, char *argv[])
         insert.push_back(tinsert);
     }
     
+    // for some reason it reads in the last line twice, so i have to manually delete them from the vectors. will have to look into this
     left.pop_back();
     right.pop_back();
     insert.pop_back();
     
-    for (char m : left) {
-        cout << m;
-    }
-    cout << endl;
     
-    for (char m : right) {
-        cout << m;
-    }
-    cout << endl;
+    // debugging
+//     for (char m : left) {
+//         cout << m;
+//     }
+//     cout << endl;
     
-    for (char m : insert) {
-        cout << m;
-    }
-    cout << endl;
+//     for (char m : right) {
+//         cout << m;
+//     }
+//     cout << endl;
+    
+//     for (char m : insert) {
+//         cout << m;
+//     }
+//     cout << endl;
     
     vector<int> indices;
     vector<char> to_insert;
     
+    // no. of steps to take. 10 for pt 1, 40 for pt 2 rip
     for (int i = 0; i < 40; i++) {
         
         // cout << "CURRENT: " << endl;
@@ -99,6 +103,7 @@ int main(int argc, char *argv[])
             }
         }
         
+        // to account for vector increasing at every insertion
         int counter = 0;
         
         // for (char m : to_insert) {
@@ -114,9 +119,11 @@ int main(int argc, char *argv[])
             counter++;
         }
         
+        // clear vector for the next step
         indices.clear();
         to_insert.clear();
         
+        // print out current polymer at every step, for debugging
         cout << "After: ";
         for (char m : polymer) {
             cout << m;
@@ -124,13 +131,15 @@ int main(int argc, char *argv[])
         cout << endl;
     }
     
+    // using maps to find no. of times a character appears in the polymer
     map<long, long> counters;
-    for(char i : polymer) {
-        ++counters[i];
+    for(char m : polymer) {
+        counters[m]++;
     }
     
     long maximum = 0;
     
+    // finding max
     for (auto m : counters) {
         if (m.second > maximum) {
             maximum = m.second;
@@ -139,6 +148,7 @@ int main(int argc, char *argv[])
     
     cout << maximum << endl;
     
+    // finding min
     for (auto m : counters) {
         if (m.second < maximum) {
             maximum = m.second;
