@@ -33,45 +33,45 @@ int main(int argc, char *argv[])
     map<string, long> polymer; // split up polymer into individual pairs by index (0 with 1, 1 with 2, etc.) use maps to see how many pairs exist
     map<char, long> chars; // split up polymer into individual characters, track their quantity using maps
     
-    input_file >> temp;
-    cout << endl;
-    cout << "Sequence: " << temp << endl;
-    
     // the following long list of code is for debugging and checking
     
-    cout << "Chars: ";
-    for (int i = 0; i < temp.length(); i++) {
-        chars[temp[i]]++;
-    }
+//     input_file >> temp;
+//     cout << endl;
+//     cout << "Sequence: " << temp << endl;
     
-    for (auto m : chars) {
-        cout << m.first << ",";
-    }
-    cout << endl;
+//     cout << "Chars: ";
+//     for (int i = 0; i < temp.length(); i++) {
+//         chars[temp[i]]++;
+//     }
     
-    cout << "Quantity: ";
-    for (auto m : chars) {
-        cout << m.second << ", ";
-    }
-    cout << endl << endl;
+//     for (auto m : chars) {
+//         cout << m.first << ",";
+//     }
+//     cout << endl;
     
-    cout << "Combos: ";
-    for (int i = 0; i < temp.length() - 1; i++) {
-        string l;
-        l += temp[i];
-        l += temp[i+1];
-        polymer[l]++;
-    }
-    for (auto m : polymer) {
-        cout << m.first << ",";
-    }
-    cout << endl;
+//     cout << "Quantity: ";
+//     for (auto m : chars) {
+//         cout << m.second << ", ";
+//     }
+//     cout << endl << endl;
     
-    cout << "Quantity: ";
-    for (auto m : polymer) {
-        cout << m.second << ", ";
-    }
-    cout << endl << endl;
+//     cout << "Combos: ";
+//     for (int i = 0; i < temp.length() - 1; i++) {
+//         string l;
+//         l += temp[i];
+//         l += temp[i+1];
+//         polymer[l]++;
+//     }
+//     for (auto m : polymer) {
+//         cout << m.first << ",";
+//     }
+//     cout << endl;
+    
+//     cout << "Quantity: ";
+//     for (auto m : polymer) {
+//         cout << m.second << ", ";
+//     }
+//     cout << endl << endl;
     
     // finally reading in the file 
     while (not input_file.eof()) {
@@ -90,17 +90,17 @@ int main(int argc, char *argv[])
     insert.pop_back();
     
     // more debugging stuff after reading in the file
-    cout << "Combos:" << endl;
-    for (string m : combos) {
-        cout << m << ",";
-    }
-    cout << endl;
+//     cout << "Combos:" << endl;
+//     for (string m : combos) {
+//         cout << m << ",";
+//     }
+//     cout << endl;
     
-    cout << "Insert:" << endl;
-    for (char m : insert) {
-        cout << m;
-    }
-    cout << endl << endl;
+//     cout << "Insert:" << endl;
+//     for (char m : insert) {
+//         cout << m;
+//     }
+//     cout << endl << endl;
     
     // so that polymer doesn't expand as the loop runs through each step lol
     map<string, long> new_polymer;
@@ -142,11 +142,11 @@ int main(int argc, char *argv[])
     }
      
     // debugging stuff
-    for (auto m : chars) {
-        cout << m.first << ":";
-        cout << m.second;
-        cout << endl;
-    }
+//     for (auto m : chars) {
+//         cout << m.first << ":";
+//         cout << m.second;
+//         cout << endl;
+//     }
     
     cout << endl << "RESULTS:" << endl;
     
