@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
     for (auto m : polymer) {
         new_polymer[m.first] = m.second;
         // yup LMAO IT WAS new_polymer[m.first]++ AT FIRST...
-        // IT THREW OFF THER REST OF THE PROGRAM... the test example only had one pair of each which is why it worked for that and not my input. sad
+        // IT THREW OFF THER REST OF THE PROGRAM... the test example only had one of each pair which is why it worked for that and not my input. sad
     }
     
     for (int i = 0; i < 40; i++) { // 40 for part 2, 10 for part 1
