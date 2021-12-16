@@ -112,6 +112,7 @@ int main(int argc, char *argv[])
         // IT THREW OFF THER REST OF THE PROGRAM... the test example only had one of each pair which is why it worked for that and not my input. sad
     }
     
+    // THE REAL MEAT OF THE PROGRAM RIGHT HERE BOYS!!!
     for (int i = 0; i < 40; i++) { // 40 for part 2, 10 for part 1
         for (auto m : polymer) { // for each pair in the polymer
             for (int j = 0; j < combos.size(); j++) { // check against list of approved pairs in combos vector
